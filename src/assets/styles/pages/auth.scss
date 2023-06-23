@@ -2,18 +2,18 @@
     width: 100px;
 }
 
-.login-header-container {
+.auth-header-container {
     text-align: center;
     padding-bottom: 40px;
 }
 
-.login-header {
+.auth-header {
     font-size: 30px;
     margin: 0px 0px;
     font-weight: 800;
     line-height: 1;
 }
-.login-view-container {
+.auth-view-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,5 +22,12 @@
     padding: 0;
     background-image: url("../../assets/bg.png");
     background-size: cover;
-    background-position: center;
+    background-position: top left;
+    background-repeat: no-repeat;
 }
+body {
+    height: 100% !important;
+    margin: 0;
+    padding: 0;
+}
+

@@ -1,10 +1,10 @@
 <template>
-    <div class="login-view-container">
+    <div class="auth-view-container">
       <login-form />
     </div>
 </template>
 <script>
-import loginForm from '../forms/loginForm.vue';
+import loginForm from '@/views/forms/loginForm.vue';
 
 export default {
   components: {
