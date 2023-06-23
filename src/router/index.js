@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import LoginView from '@/views/auth/loginView.vue';
 import signUp from '@/views/auth/signUp.vue';
 import forgotPassword from '@/views/auth/forgotPassword.vue';
+import farmerDashboard from '@/components/dashboard/farmerDashboard.vue';
 
 const routes = [
   {
@@ -18,6 +19,11 @@ const routes = [
     path: '/forgot-password',
     name: 'ForgotPassword',
     component: forgotPassword,
+  },
+  {
+    path: '/dashboard',
+    name: 'FarmerDashboard',
+    component: farmerDashboard,
   },
   {
     path: '/about',

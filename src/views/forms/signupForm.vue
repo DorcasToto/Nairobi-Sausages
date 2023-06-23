@@ -1,6 +1,6 @@
 <!-- eslint-disable vuejs-accessibility/label-has-for -->
 <template>
-    <div class="card">
+    <div class="auth-card">
      <header-text />
       <form>
         <label for="fname">Enter your username</label><br>
@@ -12,7 +12,7 @@
         <label for="password">Enter your Password</label><br>
         <input type="password" id="password" name="password"
                class="form-control" placeholder="Enter password"><br><br>
-        <input type="submit" value="Signup" class="login-button">
+        <input type="submit" value="Signup" class="auth-button ">
       </form>
       <p>Have an account? <router-link to="/">Login</router-link></p>
     </div>
