@@ -67,7 +67,8 @@
     font-weight: bold;
     margin-right: 5px;
 }
-.card {
+//use mixin
+.card-center {
     border-radius: 5px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     background-color: #fff;
@@ -78,7 +79,40 @@
     justify-content: space-between;
     align-items: center;
 }
+.card-left {
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 40px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+}
+.card-left-image {
+    width: 150px;
+    margin-right: 20px;
+}
 
+.card-left-description {
+    flex-grow: 1;
+}
+
+.card-left-description p {
+    margin: 0;
+}
+
+.card-left-tags {
+    margin-top: 10px;
+}
+
+.card-left-tags span {
+    margin-right: 5px;
+    padding: 5px 10px;
+    background-color: #ccc;
+    border-radius: 5px;
+}
 .card-number {
     font-size: 24px;
     font-weight: bold;
@@ -93,18 +127,24 @@
 .card-separator {
     padding: 10px;
 }
-
-.card-button {
-    background-color: #333;
+//use mixins here
+.card-button-primary {
+    background-color: #F3D052;
     color: #fff;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.card-button-secondary {
+    background-color: #517148;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
     font-size: 16px;
     cursor: pointer;
 }
 
-.card-button:hover {
-    background-color: #555;
-}
 
