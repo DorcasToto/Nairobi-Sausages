@@ -1,0 +1,14 @@
+.batch-form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.batch-image {
+  height: 700px;
+  width: 400px;
+}
+.batch-header-title {
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+}

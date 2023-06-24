@@ -3,6 +3,9 @@ import LoginView from '@/views/auth/loginView.vue';
 import signUp from '@/views/auth/signUp.vue';
 import forgotPassword from '@/views/auth/forgotPassword.vue';
 import farmerDashboard from '@/components/dashboard/farmerDashboard.vue';
+import postDetails from '@/views/posts/postDetails.vue';
+import sellBatch from '@/views/batches/sellBatch.vue';
+import sendBatch from '@/views/batches/sendBatch.vue';
 
 const routes = [
   {
@@ -24,6 +27,21 @@ const routes = [
     path: '/dashboard',
     name: 'FarmerDashboard',
     component: farmerDashboard,
+  },
+  {
+    path: '/post-details',
+    name: 'PostDetails',
+    component: postDetails,
+  },
+  {
+    path: '/sell-batch',
+    name: 'SellBatch',
+    component: sellBatch,
+  },
+  {
+    path: '/send-batch',
+    name: 'SendBatch',
+    component: sendBatch,
   },
   {
     path: '/about',

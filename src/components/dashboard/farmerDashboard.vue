@@ -2,25 +2,24 @@
 <template>
   <div>
     <side-nav />
-    <div class="main-content">
-      <top-bar />
+    <layout-bar>
       <dashboard-top-content />
       <post-list />
-    </div>
+    </layout-bar>
   </div>
 </template>
 <script>
 import dashboardTopContent from './dashboardTopContent.vue';
 import sideNav from './sideNav.vue';
-import topBar from './topBar.vue';
 import postList from '../../views/posts/postList.vue';
+import layoutBar from './layoutBar.vue';
 
 export default {
   components: {
     dashboardTopContent,
     sideNav,
-    topBar,
     postList,
+    layoutBar,
   },
 };
 </script>

@@ -1,16 +1,17 @@
 <template>
+    <div>
       <layout-bar>
-        <div>
-          Post details
-        </div>
+        <send-batch-form />
       </layout-bar>
-</template>
+    </div>
+  </template>
 <script>
-
 import layoutBar from '@/components/dashboard/layoutBar.vue';
+import sendBatchForm from '../forms/sendBatchForm.vue';
 
 export default {
   components: {
+    sendBatchForm,
     layoutBar,
   },
 };

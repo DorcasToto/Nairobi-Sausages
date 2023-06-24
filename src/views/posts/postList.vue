@@ -8,7 +8,7 @@
         <p>These crunchy Lemonade Chicken drumsticks are a combination of tangy buttermilk chicken paired with a crunchy,
           zesty coating that is melt-in-your-mouth perfect. If you’re craving a crunch that packs a punch, this chicken
           recipe is for you. Lemonade Chicken Recipe The chicken has a crunchiness and a zesty lemon flavor, complemented
-          by a subtle touches of spice. The Panko crust….</p>
+          by a subtle touches of spice. The Panko crust….<router-link to="">Read more</router-link></p>
         <div class="card-left-tags">
           <span>tag1</span>
           <span>tag2</span>
