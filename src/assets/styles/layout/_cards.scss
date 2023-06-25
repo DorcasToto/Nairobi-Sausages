@@ -157,20 +157,6 @@
     background-color: #ebebeb;
   }
 
-.notification-success {
-  @include notification(#32a852);
-}
-
-.notification-error {
-  @include notification(darkred);
-}
-
-  .success {
-    background-color: #32a852;
-  }
-  .error {
-    background-color: darkred;
-  }
   .ordered-feeds-container {
     display: flex;
     justify-content: center;
