@@ -4,7 +4,6 @@
 <!-- eslint-disable vuejs-accessibility/label-has-for -->
 <template>
   <div>
-    {{count }} {{ breed }} {{ age }} {{ weight }} {{ description }}
     <p @click="$router.back()" class="batch-header-back-title">Back</p>
     <p class="batch-header-title">Submit Pig details</p>
     <div class="batch-form-container">
@@ -34,7 +33,7 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
+import { mapMutations, mapGetters } from 'vuex';
 import notificationMixin from '@/mixins/notifications';
 
 export default {
@@ -48,19 +47,29 @@ export default {
       description: '',
     };
   },
+  computed: {
+    ...mapGetters(['getSentBatches']),
+  },
   methods: {
-    ...mapMutations(['incrementCount']),
+    ...mapMutations(['incrementCount', 'setSentBatches']),
     submitBatch() {
-      console.log(!this.breed || !this.age || !this.weight || !this.description || !this.count);
       if (!this.breed || !this.age || !this.weight || !this.description || !this.count) {
         this.showErrorNotification('Please fill in all fields');
         return;
       }
+      const sendBatch = {
+        breed: this.breed,
+        age: this.age,
+        weight: this.weight,
+        description: this.description,
+        count: this.sliderValue,
+      };
       const { breed, count } = this;
       this.incrementCount({ breed, count });
+      this.setSentBatches([...this.getSentBatches, sendBatch]);
       this.showSuccessNotification('Pigs uploaded successfully');
       setTimeout(() => {
-        this.$router.push('/dashboard');
+        this.$router.push('/sent-batches');
       }, 1000);
     },
   },

@@ -35,6 +35,7 @@
 </template>
 <script>
 import notificationMixin from '@/mixins/notifications';
+import { mapMutations, mapGetters } from 'vuex';
 
 export default {
   mixins: [notificationMixin],
@@ -47,7 +48,11 @@ export default {
       price: 0,
     };
   },
+  computed: {
+    ...mapGetters(['getOrderedFeeds']),
+  },
   methods: {
+    ...mapMutations(['setOrderedFeeds']),
     calculatePrice() {
       const { age, weight } = this;
       this.price = age * weight * 10;
@@ -57,9 +62,17 @@ export default {
         this.showErrorNotification('Please fill in all fields');
         return;
       }
+      const orderedFeed = {
+        feedType: this.feedType,
+        weight: this.weight,
+        age: this.age,
+        address: this.address,
+        price: this.price,
+      };
+      this.setOrderedFeeds([...this.getOrderedFeeds, orderedFeed]);
       this.showSuccessNotification('Feeds ordered successfully');
       setTimeout(() => {
-        this.$router.push('/dashboard');
+        this.$router.push('/ordered-feeds');
       }, 1000);
     },
   },

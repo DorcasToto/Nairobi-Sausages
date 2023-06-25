@@ -11,4 +11,13 @@ export default {
       batch.count -= count;
     }
   },
+  setOrderedFeeds(state, val) {
+    state.orderedFeeds = val;
+  },
+  setSentBatches(state, val) {
+    state.sentBatches = val;
+  },
+  setSoldBatches(state, val) {
+    state.soldBatches = val;
+  },
 };

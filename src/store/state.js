@@ -16,6 +16,9 @@ export default {
       description: 'long legged',
     },
   ],
+  orderedFeeds: [],
+  sentBatches: [],
+  soldBatches: [],
   farms: {
     county: 'Kiambu County',
     count: 10,

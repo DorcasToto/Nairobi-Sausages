@@ -34,7 +34,7 @@
     </div>
 </template>
 <script>
-import { mapMutations } from 'vuex';
+import { mapMutations, mapGetters } from 'vuex';
 import notificationMixin from '@/mixins/notifications';
 
 export default {
@@ -59,19 +59,30 @@ export default {
       sliderValue.textContent = this.sliderValue;
     });
   },
+  computed: {
+    ...mapGetters(['getSoldBatches']),
+  },
   methods: {
-    ...mapMutations(['sellBatches']),
+    ...mapMutations(['sellBatches', 'setSoldBatches']),
     sellBatch() {
       if (!this.breed || !this.age || !this.weight || !this.price) {
         this.showErrorNotification('Please fill in all fields');
         return;
       }
+      const soldFeed = {
+        breed: this.breed,
+        weight: this.weight,
+        age: this.age,
+        price: this.price,
+        count: this.sliderValue,
+      };
+      this.setSoldBatches([...this.getSoldBatches, soldFeed]);
       const { sliderValue, breed } = this;
       const count = sliderValue;
       this.sellBatches({ breed, count });
       this.showSuccessNotification('Batch sold successfully');
       setTimeout(() => {
-        this.$router.push('/dashboard');
+        this.$router.push('/sold-batches');
       }, 1000);
     },
   },
