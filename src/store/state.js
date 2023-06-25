@@ -19,6 +19,7 @@ export default {
   orderedFeeds: [],
   sentBatches: [],
   soldBatches: [],
+  posts: [],
   farms: {
     county: 'Kiambu County',
     count: 10,

@@ -4,4 +4,5 @@ export default {
   getOrderedFeeds: (state) => state.orderedFeeds,
   getSentBatches: (state) => state.sentBatches,
   getSoldBatches: (state) => state.soldBatches,
+  getPosts: (state) => state.posts,
 };

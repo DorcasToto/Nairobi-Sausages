@@ -20,4 +20,7 @@ export default {
   setSoldBatches(state, val) {
     state.soldBatches = val;
   },
+  setPosts(state, val) {
+    state.posts = val;
+  },
 };

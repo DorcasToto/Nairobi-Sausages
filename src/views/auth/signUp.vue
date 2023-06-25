@@ -1,6 +1,5 @@
 <template>
   <div class="auth-view-container">
-    count - {{ count }}
     <signup-form />
   </div>
 </template>

@@ -1,0 +1,31 @@
+@mixin center-align {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin card-button {
+  padding: 30px;
+  border-radius: 5px;
+}
+@mixin card-button-colors($bg-color) {
+  background-color: $bg-color;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  cursor: pointer;
+}
+@mixin notification($background-color) {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  transition: opacity 0.3s ease;
+  background-color: $background-color;
+}

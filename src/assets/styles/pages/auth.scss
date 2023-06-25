@@ -1,30 +1,36 @@
+@import "src/assets/styles/abstracts/mixins";
+
+%base-background {
+    background-size: cover;
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-image: url("../../assets/bg.png");
+}
+
 .img {
     width: 100px;
 }
 
 .auth-header-container {
-    text-align: center;
+    @include center-align;
     padding-bottom: 40px;
+
+    .auth-header {
+        font-size: $font-size-large;
+        margin: 0;
+        font-weight: $font-weight-bold;
+        line-height: 1;
+    }
 }
 
-.auth-header {
-    font-size: 30px;
-    margin: 0px 0px;
-    font-weight: 800;
-    line-height: 1;
-}
 .auth-view-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @extend %base-background;
+    @include center-align;
     height: 100vh;
     margin: 0;
     padding: 0;
-    background-image: url("../../assets/bg.png");
-    background-size: cover;
-    background-position: top left;
-    background-repeat: no-repeat;
 }
+
 body {
     height: 100% !important;
     margin: 0;

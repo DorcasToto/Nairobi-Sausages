@@ -3,7 +3,7 @@
     <div class="user-icon">
       <!--          <img src="user-icon.png" alt="User" width="20" height="20">-->
       <div class="dropdown-content">
-        <a href="#">Logout</a>
+        <router-link to="/">Logout</router-link>
       </div>
     </div>
   </div>

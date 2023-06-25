@@ -2,6 +2,36 @@
   {
     "id": 1,
     "title": "MERMAID SMOOTHIE B0WL",
-    "Description": "This magical Mermaid Smoothie Bowl is loved by children and adults alike and has the added benefit of health thanks to blue spirulina powder. The diy mermaid tails are made from frozen yogurt mixed with natural colorings and added to silicone molds",
+    "image": "../../assets/img1.webp",
+    "tags": ["banana", "chocolate"],
+    "description": "This magical Mermaid Smoothie Bowl is loved by children and adults alike and has the added benefit of health thanks to blue spirulina powder. The diy mermaid tails are made from frozen yogurt mixed with natural colorings and added to silicone molds"
+  },
+  {
+    "id": 2,
+    "title": "LEMONADE CHICKEN",
+    "image": "../../assets/img2.webp",
+    "tags": ["casserole", "breakfast"],
+    "description": "These crunchy Lemonade Chicken drumsticks are a combination of tangy buttermilk chicken paired with a crunchy, zesty coating that is melt-in-your-mouth perfect. If you’re craving a crunch that packs a punch, this chicken recipe is for you."
+  },
+  {
+    "id": 3,
+    "title": "LEMON CORNMEAL CAKE",
+    "image": "../../assets/img3.webp",
+    "tags": ["blueberry", "margarita"],
+    "description": "Indulge in a slice of pure sunshine with this lemon cornmeal cake. This recipe blends the comforting flavors of cornbread, with the allure of a buttermilk coffee cake. Each bite is slathered in lemon glaze and crowned with a mound of blueberry topping as a finishing touch"
+  },
+  {
+    "id": 4,
+    "title": "STRAWBERRY BUTTERMILK PANCAKES",
+    "image": "../../assets/img4.webp",
+    "tags": ["banana", "chocolate"],
+    "description": "Strawberry Buttermilk Pancakes, where sweet meets tanginess and breakfast becomes a morning love affair. Topped with strawberry sauce, this fluffy, buttermilk stack is the epitome of pancake perfection. Strawberry Pancakes There is something so undeniably comforting and satisfying about a stack of pancakes"
+  },
+  {
+    "id": 5,
+    "title": "STRAWBERRY SAUCE",
+    "image": "../../assets/img5.webp",
+    "tags": ["banana", "chocolate"],
+    "description": "Bottle up this simple Strawberry Sauce to always have on hand. Use it as a finishing touch on everything from waffles to buttermilk pancakes, on top of cheesecake, drizzled over vanilla ice cream or spooned over shortcakes"
   }
 ]
