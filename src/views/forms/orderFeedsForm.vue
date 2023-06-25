@@ -1,3 +1,4 @@
+<!-- eslint-disable no-console -->
 <!-- eslint-disable max-len -->
 <!-- eslint-disable vuejs-accessibility/label-has-for -->
 <!-- eslint-disable vuejs-accessibility/click-events-have-key-events -->
@@ -10,26 +11,58 @@
       <div class="auth-card">
         <form>
           <label for="feed-type">Feed Type:</label><br>
-          <select id="breed" name="breed" class="form-control">
-            <option value="breed1">Energy feed</option>
-            <option value="breed2">Pr</option>
+          <select id="breed" name="breed" class="form-control" v-model="feedType" required>
+            <option value="Energy Feed">Energy Feed</option>
+            <option value="Protein Feed">Protein Feed</option>
           </select><br>
           <label for="age">Age (months):</label><br>
-          <input type="number" id="age" name="age" class="form-control" placeholder="Enter Age"><br>
+          <input type="number" id="age" name="age" class="form-control" placeholder="Enter Age" v-model="age" required><br>
           <label for="weight">Weight (kg)</label><br>
           <input type="number" id="weight" name="weight" class="form-control"
-                 placeholder="Enter Average weight"><br>
-          <label for="weight">Quantity</label><br>
-          <input type="number" id="price" name="price" class="form-control" placeholder="Enter Quantity"><br>
+                 placeholder="Enter Average weight" @change="calculatePrice" v-model="weight" required><br>
           <label for="delivery-address">Delivery Address:</label><br>
-          <textarea id="delivery-address" name="delivery-address" placeholder="Enter Delivery Address" class="form-control"></textarea><br>
+          <textarea id="delivery-address" name="delivery-address" placeholder="Enter Delivery Address" class="form-control" v-model="address" required></textarea><br>
           <div id="price-display">
             <label for="price">Price:</label>
-            <span id="price">-</span>
+            <span id="price">{{ this.price }}</span>
           </div><br>
-          <input type="submit" value="Upload details" class="auth-button ">
+          <button type="submit" value="Upload details" class="auth-button" @click.prevent="orderFeeds">Order Feeds</button>
+          <div v-if="showNotification" :class="`notification-${notificationType}`">{{ notificationMessage }}</div>
         </form>
       </div>
     </div>
   </div>
 </template>
+<script>
+import notificationMixin from '@/mixins/notifications';
+
+export default {
+  mixins: [notificationMixin],
+  data() {
+    return {
+      feedType: '',
+      weight: 0,
+      age: 0,
+      address: 0,
+      price: 0,
+    };
+  },
+  methods: {
+    calculatePrice() {
+      const { age, weight } = this;
+      this.price = age * weight * 10;
+    },
+    orderFeeds() {
+      if (!this.feedType || !this.age || !this.weight || !this.address) {
+        this.showErrorNotification('Please fill in all fields');
+        return;
+      }
+      this.showSuccessNotification('Feeds ordered successfully');
+      setTimeout(() => {
+        this.$router.push('/dashboard');
+      }, 1000);
+    },
+  },
+
+};
+</script>

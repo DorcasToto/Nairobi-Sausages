@@ -23,11 +23,11 @@
                     <label for="weight">Weight (kg)</label><br>
                     <input type="number" id="weight" name="weight" class="form-control" placeholder="Enter Average weight"
                         v-model="weight" @change="calculatePrice"><br>
-                    <label for="weight">Price(KES)</label><br>
-                    <input type="number" id="price" name="price" class="form-control" placeholder="Enter price per pig"
-                        :value=price disabled=""><br>
+                    <label for="weight">Ask price per pig(KES)</label><br>
+                    <input type="number" id="price" name="price" class="form-control" placeholder="Enter price per pig" v-model="price"><br>
                     <br>
-                    <button type="submit" value="Upload details" class="auth-button " @click="sellBatch">Submit Request</button>
+                    <button type="submit" value="Upload details" class="auth-button " @click.prevent="sellBatch">Submit Request</button>
+                  <div v-if="showNotification" :class="`notification-${notificationType}`">{{ notificationMessage }}</div>
                 </form>
             </div>
         </div>
@@ -35,8 +35,10 @@
 </template>
 <script>
 import { mapMutations } from 'vuex';
+import notificationMixin from '@/mixins/notifications';
 
 export default {
+  mixins: [notificationMixin],
   data() {
     return {
       breed: '',
@@ -60,14 +62,17 @@ export default {
   methods: {
     ...mapMutations(['sellBatches']),
     sellBatch() {
+      if (!this.breed || !this.age || !this.weight || !this.price) {
+        this.showErrorNotification('Please fill in all fields');
+        return;
+      }
       const { sliderValue, breed } = this;
       const count = sliderValue;
       this.sellBatches({ breed, count });
-      this.$router.push('/dashboard');
-    },
-    calculatePrice() {
-      const { age, weight } = this;
-      this.price = age * weight * 10;
+      this.showSuccessNotification('Batch sold successfully');
+      setTimeout(() => {
+        this.$router.push('/dashboard');
+      }, 1000);
     },
   },
 };

@@ -4,7 +4,7 @@
 <!-- eslint-disable vuejs-accessibility/label-has-for -->
 <template>
   <div>
-    {{count }}
+    {{count }} {{ breed }} {{ age }} {{ weight }} {{ description }}
     <p @click="$router.back()" class="batch-header-back-title">Back</p>
     <p class="batch-header-title">Submit Pig details</p>
     <div class="batch-form-container">
@@ -25,7 +25,8 @@
           <label for="weight">Description</label><br>
           <input type="text" id="age" name="age" class="form-control" placeholder="Enter Description" v-model="description" required><br>
           <br>
-          <button class="auth-button" @click="submitBatch">Upload details</button>
+          <button class="auth-button" @click.prevent="submitBatch">Upload details</button>
+          <div v-if="showNotification" :class="`notification-${notificationType}`">{{ notificationMessage }}</div>
         </form>
       </div>
     </div>
@@ -34,23 +35,33 @@
 
 <script>
 import { mapMutations } from 'vuex';
+import notificationMixin from '@/mixins/notifications';
 
 export default {
+  mixins: [notificationMixin],
   data() {
     return {
       breed: '',
       weight: 0,
       age: 0,
       count: 0,
-      description: 0,
+      description: '',
     };
   },
   methods: {
     ...mapMutations(['incrementCount']),
     submitBatch() {
+      console.log(!this.breed || !this.age || !this.weight || !this.description || !this.count);
+      if (!this.breed || !this.age || !this.weight || !this.description || !this.count) {
+        this.showErrorNotification('Please fill in all fields');
+        return;
+      }
       const { breed, count } = this;
       this.incrementCount({ breed, count });
-      this.$router.push('/dashboard');
+      this.showSuccessNotification('Pigs uploaded successfully');
+      setTimeout(() => {
+        this.$router.push('/dashboard');
+      }, 1000);
     },
   },
 };
