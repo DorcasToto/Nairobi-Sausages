@@ -2,11 +2,11 @@
     <div class="card-container">
       <div class="card-center">
         <div class="card-number-container">
-          <div class="card-number">2</div>
+          <div class="card-number">{{ getFarms.count }}</div>
           <div class="card-separator">|</div>
-          <div class="card-location">Kiambu County</div>
+          <div class="card-location">{{ getFarms.county }}</div>
         </div>
-        <button class="card-button-primary"  @click="orderFeeds">Order Feeds</button>
+        <button class="card-button-primary"  @click="sendFeeds">Order Feeds</button>
       </div>
       <div class="card-center">
         <div class="card-number-container">
@@ -15,10 +15,10 @@
         <button class="card-button-secondary" @click="sendBatch">Send Batch</button>
       </div>
       <div class="card-center">
-        <div class="card-number-container">
-          <div class="card-number">2</div>
-          <div class="card-separator">|</div>
-          <div class="card-location">Large White</div>
+        <div v-for="(batch, index) in getBatches" :key="index">
+          <span class="card-number">{{ batch.count }}</span>
+          <span class="card-separator">|</span>
+          <span class="card-location">{{ batch.breed }}</span>
         </div>
         <button class="card-button-secondary" @click="sellBatch">Sell a Batch</button>
       </div>
@@ -26,7 +26,12 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
+  computed: {
+    ...mapGetters(['getBatches', 'getFarms']),
+  },
   methods: {
     sendBatch() {
       this.$router.push('send-batch');
@@ -34,7 +39,7 @@ export default {
     sellBatch() {
       this.$router.push('sell-batch');
     },
-    orderFeeds() {
+    sendFeeds() {
       this.$router.push('order-feeds');
     },
   },

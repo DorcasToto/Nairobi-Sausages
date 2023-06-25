@@ -13,7 +13,7 @@ import soldBatches from '@/views/batches/soldBatches.vue';
 
 const routes = [
   {
-    path: '/login',
+    path: '/',
     name: 'Login',
     component: LoginView,
   },
@@ -28,7 +28,7 @@ const routes = [
     component: forgotPassword,
   },
   {
-    path: '/',
+    path: '/dashboard',
     name: 'FarmerDashboard',
     component: farmerDashboard,
   },
