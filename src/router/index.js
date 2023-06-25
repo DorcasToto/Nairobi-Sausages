@@ -6,10 +6,14 @@ import farmerDashboard from '@/components/dashboard/farmerDashboard.vue';
 import postDetails from '@/views/posts/postDetails.vue';
 import sellBatch from '@/views/batches/sellBatch.vue';
 import sendBatch from '@/views/batches/sendBatch.vue';
+import orderFeeds from '@/views/feeds/orderFeeds.vue';
+import orderedFeeds from '@/views/feeds/orderedFeeds.vue';
+import sentBatches from '@/views/batches/sentBatches.vue';
+import soldBatches from '@/views/batches/soldBatches.vue';
 
 const routes = [
   {
-    path: '/',
+    path: '/login',
     name: 'Login',
     component: LoginView,
   },
@@ -24,7 +28,7 @@ const routes = [
     component: forgotPassword,
   },
   {
-    path: '/dashboard',
+    path: '/',
     name: 'FarmerDashboard',
     component: farmerDashboard,
   },
@@ -42,6 +46,26 @@ const routes = [
     path: '/send-batch',
     name: 'SendBatch',
     component: sendBatch,
+  },
+  {
+    path: '/order-feeds',
+    name: 'OrderFeeds',
+    component: orderFeeds,
+  },
+  {
+    path: '/ordered-feeds',
+    name: 'OrderedFeeds',
+    component: orderedFeeds,
+  },
+  {
+    path: '/sent-batches',
+    name: 'SentBatches',
+    component: sentBatches,
+  },
+  {
+    path: '/sold-batches',
+    name: 'SoldBatches',
+    component: soldBatches,
   },
   {
     path: '/about',

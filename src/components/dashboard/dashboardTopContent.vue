@@ -6,7 +6,7 @@
           <div class="card-separator">|</div>
           <div class="card-location">Kiambu County</div>
         </div>
-        <button class="card-button-primary">Order Feeds</button>
+        <button class="card-button-primary"  @click="orderFeeds">Order Feeds</button>
       </div>
       <div class="card-center">
         <div class="card-number-container">
@@ -33,6 +33,9 @@ export default {
     },
     sellBatch() {
       this.$router.push('sell-batch');
+    },
+    orderFeeds() {
+      this.$router.push('order-feeds');
     },
   },
 };

@@ -1,8 +1,10 @@
+<!-- eslint-disable vuejs-accessibility/click-events-have-key-events -->
 <!-- eslint-disable vuejs-accessibility/form-control-has-label -->
 <!-- eslint-disable max-len -->
 <!-- eslint-disable vuejs-accessibility/label-has-for -->
 <template>
   <div>
+    <p @click="$router.back()" class="batch-header-back-title">Back</p>
     <p class="batch-header-title">Submit Pig details</p>
     <div class="batch-form-container">
         <img src="../../assets/pigs2.jpg" alt="test" class="batch-image">

@@ -14,7 +14,7 @@
                class="form-control" placeholder="Enter password"><br><br>
         <input type="submit" value="Signup" class="auth-button ">
       </form>
-      <p>Have an account? <router-link to="/">Login</router-link></p>
+      <p>Have an account? <router-link to="/login">Login</router-link></p>
     </div>
 </template>
 <script>

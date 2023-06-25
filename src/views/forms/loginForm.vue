@@ -9,7 +9,7 @@
         <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email address"><br>
         <label for="password">Enter your Password</label><br>
         <input type="password" id="password" name="password" class="form-control" placeholder="Enter password"><br><br>
-        <input type="submit" value="Login" class="auth-button">
+        <input type="submit" value="Login" class="auth-button" @click="$router.push('/')">
       </form>
       <p>Do not have an account? <router-link to="/signup">Register</router-link></p>
       <router-link to="/forgot-password">Forgot password</router-link>
